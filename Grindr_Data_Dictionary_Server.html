@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Grindr_Data_Dictionary_Server</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Data Dictionary</h1>
+
+<p>Thank you for submitting your request to us. At Grindr, your privacy is important to us and we are proud to support your ability to access and understand the data we collect about you. </p>
+
+<p>The information you will receive through our Download My Data tool is largely already available to you through the app and may vary depending on the way you have used Grindr. In general, this information includes content and photos you have provided us, whether directly or through your social media accounts, as well as messages you have sent and other data from the Grindr social media service.</p>
+
+<p>Below is a data dictionary that we are providing for your convenience so you can understand the data returned to you. The data dictionary is a list of data file types contained within your data download and a description of the information included in those files. If a field is blank in your file, it means that we do not have that data for you, and nulls are expected for some fields. The data shown below is stored by Grindr&#39;s servers (rather than your mobile device). Also, please note that the data returned to you reflects the data we currently have stored pursuant to our Privacy Policy. Timestamps are in Coordinated Universal Time (UTC) unless otherwise indicated.</p>
+
+<hr>
+
+<p>For additional information on how we use and share data, please refer to our <a href="https://www.grindr.com/privacy-policy/" target="_blank">Privacy Policy</a>, or copy and paste this link: https://www.grindr.com/privacy-policy/.</p>
+
+<hr>
+
+<h2 id="toc_1">Account</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>publicProfile</td>
+<td>status</td>
+<td>The status of your account (e.g. an &quot;active&quot; or &quot;banned&quot; account).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>displayName</td>
+<td>Your current display name in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>age</td>
+<td>Your current age displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>verifiedByCS</td>
+<td>Whether your age has been verified by Grindr&#39;s Customer Support team. (Note: you may have provided your age when your account was contested and needed verification by the Customer Support team).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>aboutMe</td>
+<td>The current text you entered into the &quot;About Me&quot; section in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>heightMeters</td>
+<td>Your current height displayed in your public Grindr profile. This will be displayed in meters.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>weightGrams</td>
+<td>Your current weight displayed in your public Grindr profile. This will be displayed in grams.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>lastUpdatedUTC</td>
+<td>The last time you updated the information in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>ethnicity</td>
+<td>The last ethnicity displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>relationshipStatus</td>
+<td>Your current relationship status displayed in your public Grindr profile (e.g. &quot;Open Relationship&quot;, &quot;Single&quot;, &quot;Engaged&quot;).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>showAge</td>
+<td>Whether your age is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>showDistance</td>
+<td>Whether your relative distance is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>bodyType</td>
+<td>Your current body type displayed in your public Grindr profile (e.g. &quot;Stocky&quot;, &quot;Slim&quot;, &quot;Average&quot;).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>sexualPosition</td>
+<td>Your current preferred position displayed in your public Grindr profile (e.g. &quot;Bottom&quot;, &quot;Versatile&quot;, &quot;Vers Top&quot;).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>genderCategory</td>
+<td>The current gender category selected in your Grindr profile settings (e.g. &quot;Trans Woman&quot;, &quot;Non-Binary&quot;).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>genderDisplay</td>
+<td>Your current gender displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>pronounsCategory</td>
+<td>The current pronoun category selected in your Grindr profile settings (e.g. &quot;Custom Pronouns&quot;, &quot;She/Her/Hers&quot;, &quot;They/Them/Theirs&quot;).</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>pronounsDisplay</td>
+<td>Your current pronouns displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>nsfwPreference</td>
+<td>Your current preference to receive NSFW (&quot;Not Suitable For Work&quot;) content, which is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>tribes</td>
+<td>Your current selected tribe(s) (e.g. &quot;Trans&quot;, &quot;Bear&quot;, &quot;Poz&quot;), which is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>lookingFor</td>
+<td>The current connection(s) that you are looking for (e.g. &quot;Right Now&quot;, &quot;Dates&quot;, &quot;Relationship&quot;), which is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>meetAt</td>
+<td>The current location(s) that you prefer to meet other Grindr users at (e.g. &quot;My Place&quot;, &quot;Bar&quot;, &quot;Coffee Shop&quot;), which is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>hashTags</td>
+<td>The hashtags displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>publicProfile</td>
+<td>socialNetworks</td>
+<td>The current social media account(s) linked and displayed in your public Grindr profile (e.g. Facebook, Twitter, Instagram, etc.).</td>
+</tr>
+<tr>
+<td>cascadeSettings</td>
+<td>cascadeSettings</td>
+<td>The grid settings you maintain for your Grindr account (e.g. Incognito - where you are hidden from your account displaying in other user&#39;s grid).</td>
+</tr>
+<tr>
+<td>accountInformation</td>
+<td>app</td>
+<td>The version name of the Grindr application downloaded to your mobile device (e.g. GRINDR_iOS).</td>
+</tr>
+<tr>
+<td>accountInformation</td>
+<td>version</td>
+<td>The last known software version of the Grindr application downloaded to your mobile device.</td>
+</tr>
+<tr>
+<td>accountInformation</td>
+<td>optInOccasionalEmails</td>
+<td>Whether you opted in to receiving occasional emails regarding your account, subscription and special offers from Grindr.</td>
+</tr>
+<tr>
+<td>accountInformation</td>
+<td>smsVerificationCountryCode</td>
+<td>The country code of your phone number used to verify your account through SMS (e.g. 1 for the U.S.).</td>
+</tr>
+<tr>
+<td>accountInformation</td>
+<td>smsCreatedAccountCountryCode</td>
+<td>The country code of your phone number used to create account through SMS (e.g. 1 for the U.S.).</td>
+</tr>
+<tr>
+<td>accountInformation</td>
+<td>loginWithVendor</td>
+<td>The name of any third party platform used to create your Grindr account (e.g. Facebook, Google, Apple).</td>
+</tr>
+<tr>
+<td>legalAgreements</td>
+<td>type</td>
+<td>The type of Grindr legal agreement that you last accepted in order to use the Grindr application (e.g. &quot;Privacy Policy&quot;, &quot;Terms and Conditions of Service&quot;).</td>
+</tr>
+<tr>
+<td>legalAgreements</td>
+<td>version</td>
+<td>The version (usually indicated by date) of the Grindr legal agreement that you last accepted in order to use the Grindr application (e.g. &quot;20200313&quot;).</td>
+</tr>
+<tr>
+<td>legalAgreements</td>
+<td>locale</td>
+<td>The region and language of the Grindr legal agreement that you last accepted in order to use the Grindr application (e.g. &quot;en_US&quot;).</td>
+</tr>
+<tr>
+<td>legalAgreements</td>
+<td>acceptedTimeUTC</td>
+<td>The date and time that you last accepted the relevant Grindr legal agreement in order to use the Grindr application.</td>
+</tr>
+<tr>
+<td>testStatus</td>
+<td>hivStatus</td>
+<td>The self-disclosed HIV status that is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>testStatus</td>
+<td>lastTestedDateUTC</td>
+<td>The self-disclosed date that you were last tested for HIV that is displayed in your public Grindr profile.</td>
+</tr>
+<tr>
+<td>dataAccessRequests</td>
+<td>email</td>
+<td>The email address(es) associated with your previous requests for your data that you submitted to Grindr.</td>
+</tr>
+<tr>
+<td>dataAccessRequests</td>
+<td>requestedDateUTC</td>
+<td>The requested date(s) and time(s) associated with your previous requests for your data that you submitted to Grindr.</td>
+</tr>
+<tr>
+<td>dataAccessRequests</td>
+<td>status</td>
+<td>The status(es) associated with your previous requests for your data that you submitted to Grindr (e.g. processing).</td>
+</tr>
+<tr>
+<td>ipAddresses</td>
+<td>ipAddress</td>
+<td>Your device&#39;s IP address(es) associated with your account.</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>lat</td>
+<td>Your device&#39;s latitude(s) associated with your account.</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>lon</td>
+<td>Your device&#39;s longitude(s) associated with your account.</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>timestampUTC</td>
+<td>The date and time associated with your device&#39;s location.</td>
+</tr>
+<tr>
+<td>countries</td>
+<td>countries</td>
+<td>The countries associated with your account.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_2">Chat</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>groupChatMessages</td>
+<td>name</td>
+<td>The name of the group chat in which you sent messages.</td>
+</tr>
+<tr>
+<td>groupChatMessages</td>
+<td>message</td>
+<td>The chat message you sent in a group chat.</td>
+</tr>
+<tr>
+<td>groupChatMessages</td>
+<td>type</td>
+<td>The type of message that you sent in a group chat, such as text, giphys, private videos, replies, (expiring) images, audio files, gaymojis, location, taps, and links.</td>
+</tr>
+<tr>
+<td>groupChatMessages</td>
+<td>sentTimeUTC</td>
+<td>The date and time that you sent messages in a group chat.</td>
+</tr>
+<tr>
+<td>chatMessages</td>
+<td>name</td>
+<td>The display name of a Grindr user that you sent messages.</td>
+</tr>
+<tr>
+<td>chatMessages</td>
+<td>message</td>
+<td>The chat message you sent to another user.</td>
+</tr>
+<tr>
+<td>chatMessages</td>
+<td>type</td>
+<td>The type of message that you sent to another user, such as text, giphys, private videos, replies, reactions, retracted messages, (expiring) images, audio files, gaymojis, location, taps, and links.</td>
+</tr>
+<tr>
+<td>chatMessages</td>
+<td>sentTimeUTC</td>
+<td>The date and time that you sent messages to another user.</td>
+</tr>
+<tr>
+<td>savedPhrases</td>
+<td>savedPhrases</td>
+<td>The Saved Phrases (for chat) associated with your account. Saved Phrases is a feature available to users with a subscription allowing the user to save phrases that were either sent by them or the ones they have received in their chats.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_3">Customer Relationship Management</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>created_at</td>
+<td>created_at</td>
+<td>The date and time when your information was first collected.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>country</td>
+<td>Your country (extracted from your device&#39;s locale) in the ISO-3166-1 alpha-2 standard (e.g. GB).</td>
+</tr>
+<tr>
+<td>language</td>
+<td>language</td>
+<td>Your language (extracted from your device&#39;s locale) in the ISO-639-1 standard (e.g. en).</td>
+</tr>
+<tr>
+<td>time_zone</td>
+<td>time_zone</td>
+<td>Your timezone (extracted from your device) in the same format as the IANA Time Zone Database (e.g. &quot;America/New_York or Eastern Time (US &amp; Canada)&quot;).</td>
+</tr>
+<tr>
+<td>last_coordinates</td>
+<td>last_coordinates</td>
+<td>Your latest coordinates (extracted from your device).</td>
+</tr>
+<tr>
+<td>previous<em>last</em>coordinates</td>
+<td>previous<em>last</em>coordinates</td>
+<td>Your previous latest coordinates (extracted from your device).</td>
+</tr>
+<tr>
+<td>push_tokens</td>
+<td>token</td>
+<td>A device-specific identifier that is assigned in order to create a connection between the Grindr app and your device in order to enable push notifications. A push notification is a message that pops up on your mobile device, alerting you to information that you have opted-in to receive from the Grindr app.</td>
+</tr>
+<tr>
+<td>push_tokens</td>
+<td>notifications_enabled</td>
+<td>Whether push notification are enabled on your device.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>in_trial</td>
+<td>Whether you are currently using a free trial of a Grindr subscription product.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>purchased_products</td>
+<td>The product(s) that you purchased (e.g. Xtra for 6 months, Unlimited for 1 month).</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>subscribed_products</td>
+<td>The subscription product(s) that are currently active and that you are currently subscribed to.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>has<em>no</em>ads</td>
+<td>Whether you receive ads on the Grindr app (dependent on whether you maintain a subscription product and have provided your consent).</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>xtra<em>purchase</em>status</td>
+<td>The status of whether you paid for an Xtra subscription product.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>unlimited<em>purchase</em>status</td>
+<td>The status of whether you paid for an Unlimited subscription product.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>free_products</td>
+<td>The product(s) that you received for free.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>plan<em>expiration</em>date</td>
+<td>The expiration date of your current product subscription.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>last<em>product</em>free</td>
+<td>The last product that you received for free.</td>
+</tr>
+<tr>
+<td>custom_attributes</td>
+<td>last<em>product</em>purchased</td>
+<td>The last product that you purchased.</td>
+</tr>
+<tr>
+<td>custom_events</td>
+<td>name</td>
+<td>The name of an event where you interacted with the Grindr app. These events vary, are customized by Grindr and are based on your engagement with the Grindr app (e.g. successfully logged in, edited your profile, first opened the app).</td>
+</tr>
+<tr>
+<td>custom_events</td>
+<td>first</td>
+<td>The date and time that you first engaged with the Grindr app that corresponds with a custom event tracked.</td>
+</tr>
+<tr>
+<td>custom_events</td>
+<td>last</td>
+<td>The date and time that you last engaged with the Grindr app that corresponds with a custom event tracked.</td>
+</tr>
+<tr>
+<td>custom_events</td>
+<td>count</td>
+<td>The number of times that you engaged with the Grindr app that corresponds with a custom event tracked.</td>
+</tr>
+<tr>
+<td>campaigns_received</td>
+<td>name</td>
+<td>The name of a campaign that you received on the Grindr app.</td>
+</tr>
+<tr>
+<td>campaigns_received</td>
+<td>api<em>campaign</em>id</td>
+<td>The API identifier of a campaign that you received on the Grindr app.</td>
+</tr>
+<tr>
+<td>campaigns_received</td>
+<td>last_received</td>
+<td>The last time you received a campaign on the Grindr app.</td>
+</tr>
+<tr>
+<td>campaigns_received</td>
+<td>in_control</td>
+<td>Whether you were part of a control group in a campaign that you received on the Grindr app.</td>
+</tr>
+<tr>
+<td>campaigns_received</td>
+<td>variation_name</td>
+<td>The name of a variation of a campaign that you received on the Grindr app.</td>
+</tr>
+<tr>
+<td>campaigns_received</td>
+<td>variation<em>api</em>id</td>
+<td>The API identifier of a variation campaign that you received on the Grindr app.</td>
+</tr>
+<tr>
+<td>cards_clicked</td>
+<td>name</td>
+<td>The name of a content card that is part of a campaign that you received on the Grindr app. A content card is a clickable stream of content that may delivered to your Grindr inbox or grid.</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>model</td>
+<td>The model of the device used to access the Grindr application.</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>os</td>
+<td>The operating system of the device used to access the Grindr application.</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>carrier</td>
+<td>The carrier of the device (e.g. T-Mobile, Verizon) used to access the Grindr application.</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>device_id</td>
+<td>The identifier of the device used to access the Grindr application.</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>name</td>
+<td>The name of the Grindr application that you accessed.</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>platform</td>
+<td>The platform that you used to access the Grindr application.</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>sessions</td>
+<td>The number of sessions that you had with the Grindr application.</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>version</td>
+<td>The version number of the Grindr application that you accessed.</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>first_used</td>
+<td>The date and time you first accessed the Grindr application.</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>last_used</td>
+<td>The date and time you last accessed the Grindr application.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_4">Media</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>profilePhotos</td>
+<td>file</td>
+<td>The file name of profile photo(s) associated with your account. If a picture was flagged for violation against Grindr&#39;s Community Guidelines, only pictures approved by Grindr will be included in this list.</td>
+</tr>
+<tr>
+<td>profilePhotos</td>
+<td>position</td>
+<td>The position of your profile photo(s) associated with your account. A position is the order that a photo is presented in your profile (e.g. &quot;0&quot; - first picture, &quot;1&quot; - second picture and so on).</td>
+</tr>
+<tr>
+<td>profilePhotos</td>
+<td>hasFace</td>
+<td>Whether your profile photo(s) associated with your account includes a person&#39;s face.</td>
+</tr>
+<tr>
+<td>chatPhotos</td>
+<td>file</td>
+<td>The file name of each chat photo you sent from your account.</td>
+</tr>
+<tr>
+<td>expiringVideos</td>
+<td>file</td>
+<td>The file name of each expired video you sent from your account.</td>
+</tr>
+<tr>
+<td>expiringVideos</td>
+<td>created</td>
+<td>The date and time that you created an expired video and that was sent from your account.</td>
+</tr>
+<tr>
+<td>audioFiles</td>
+<td>file</td>
+<td>The file name of each chat audio you sent from your account.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_5">Profile Features</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>chatTranslation</td>
+<td>month</td>
+<td>The month that you translated your chat messages.</td>
+</tr>
+<tr>
+<td>chatTranslation</td>
+<td>count</td>
+<td>The number of times you translated your chats per month.</td>
+</tr>
+<tr>
+<td>videoCall</td>
+<td>period</td>
+<td>The month (yyyyMM) and/or day (yyyyMMdd) that you used engaged in a video call.</td>
+</tr>
+<tr>
+<td>videoCall</td>
+<td>userSeconds</td>
+<td>Total seconds by period that you engaged in a video call.</td>
+</tr>
+<tr>
+<td>googleBackup</td>
+<td>email</td>
+<td>The email address of your Google Cloud storage account where your chats are backed up to.</td>
+</tr>
+<tr>
+<td>googleBackup</td>
+<td>backUpSize</td>
+<td>The amount of backup size that your chats take up when you last backed up chats to your Google Cloud storage account.</td>
+</tr>
+<tr>
+<td>googleBackup</td>
+<td>backupTime</td>
+<td>The amount of time it took when you last backed up your chats to your Google Cloud storage account.</td>
+</tr>
+<tr>
+<td>googleBackup</td>
+<td>timesBackedUp</td>
+<td>The number of times your chats have been backed up to your Google Cloud storage account.</td>
+</tr>
+<tr>
+<td>favoriteProfiles</td>
+<td>favoriteProfiles</td>
+<td>The profile name(s) in your &quot;Favorites&quot; list.</td>
+</tr>
+<tr>
+<td>blockedProfiles</td>
+<td>blockedProfiles</td>
+<td>The profile name(s) that have been blocked.</td>
+</tr>
+<tr>
+<td>profilesViewed</td>
+<td>displayName</td>
+<td>The profile names that you have viewed (NOT the profiles names that have viewed you).</td>
+</tr>
+<tr>
+<td>profilesViewed</td>
+<td>viewedDateUTC</td>
+<td>The date in which you viewed other Grindr profiles.</td>
+</tr>
+<tr>
+<td>spotifyFavorites</td>
+<td>spotifyFavorites</td>
+<td>The URL(s) for Spotify song(s) you favorited on your Grindr profile.</td>
+</tr>
+<tr>
+<td>myTags</td>
+<td>tags</td>
+<td>The tags you have saved on your profile.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_6">Purchases</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>subscriptions</td>
+<td>product</td>
+<td>The product name of a subscription that you have purchased for your account.</td>
+</tr>
+<tr>
+<td>subscriptions</td>
+<td>createdTimeUTC</td>
+<td>The date and time that a subscription product began for your account.</td>
+</tr>
+<tr>
+<td>subscriptions</td>
+<td>expiresTimeUTC</td>
+<td>The date and time that a subscription product will expire for your account.</td>
+</tr>
+<tr>
+<td>subscriptions</td>
+<td>autoRenewEnabled</td>
+<td>Whether a subscription product associated with your account is set to renew automatically.</td>
+</tr>
+<tr>
+<td>subscriptionTransactions</td>
+<td>type</td>
+<td>The type of transaction used to acquire a subscription product (e.g. &quot;CREDIT&quot;, &quot;PURCHASE&quot;).</td>
+</tr>
+<tr>
+<td>subscriptionTransactions</td>
+<td>timeUTC</td>
+<td>The date and time that a subscription product was acquired.</td>
+</tr>
+<tr>
+<td>subscriptionTransactions</td>
+<td>product</td>
+<td>The name of a subscription product that was acquired in a transaction.</td>
+</tr>
+<tr>
+<td>subscriptionTransactions</td>
+<td>purchasePlatform</td>
+<td>The platform that a subscription product was purchased from (e.g. App Store, Google Play).</td>
+</tr>
+<tr>
+<td>consumableInventory</td>
+<td>consumable</td>
+<td>The name of a consumable associated with your account. Consumeable are limited quantity of features that Grindr offers to users as one-time purchases.</td>
+</tr>
+<tr>
+<td>consumableInventory</td>
+<td>remaining</td>
+<td>The remaining number of consumables in your consumable inventory.</td>
+</tr>
+<tr>
+<td>consumableTransactions</td>
+<td>consumable</td>
+<td>The name of a consumable you acquired in a transaction.</td>
+</tr>
+<tr>
+<td>consumableTransactions</td>
+<td>type</td>
+<td>The way you interacted with a consumable (e.g. &quot;USE_INVENTORY&quot; = used a consumable, &quot;PURCHASE&quot; = purchased a consumable).</td>
+</tr>
+<tr>
+<td>consumableTransactions</td>
+<td>timeUTC</td>
+<td>The date and time of a transaction involving a consumable.</td>
+</tr>
+<tr>
+<td>consumableTransactions</td>
+<td>amount</td>
+<td>The amount of consumables acquired/used in a transaction.</td>
+</tr>
+<tr>
+<td>consumableTransactions</td>
+<td>purchasePlatform</td>
+<td>The platform where a consumable was purchased (e.g. App Store, Google Play).</td>
+</tr>
+<tr>
+<td>newUserRewards</td>
+<td>reward</td>
+<td>The type of free reward given to you. (Note: this “new user rewards” feature is no longer active).</td>
+</tr>
+<tr>
+<td>newUserRewards</td>
+<td>createdAtUTC</td>
+<td>The date and time that a new user reward was given to you.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_7">Push Notifications</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pushDevices</td>
+<td>osName</td>
+<td>The operating system of your device where the Grindr app is downloaded and push notifications are delivered.</td>
+</tr>
+<tr>
+<td>pushDevices</td>
+<td>osVersion</td>
+<td>The operating system version of your device where the Grindr app is downloaded and push notifications are delivered.</td>
+</tr>
+<tr>
+<td>pushDevices</td>
+<td>deviceModel</td>
+<td>The model of your device where the Grindr app is downloaded and push notifications are delivered.</td>
+</tr>
+<tr>
+<td>profilesWithMutedChatNotifications</td>
+<td>profilesWithMutedChatNotifications</td>
+<td>The profile name(s) in your &quot;Muted&quot; list. A &quot;Muted&quot; list stores profiles names in which you muted a user&#39;s chats, i.e. you are not receiving any notifications when that user sends new chat messages.</td>
+</tr>
+<tr>
+<td>groupChatNotifications</td>
+<td>pushAllowed</td>
+<td>Whether you enabled receiving push notifications for a group chat.</td>
+</tr>
+<tr>
+<td>groupChatNotifications</td>
+<td>name</td>
+<td>The group chat name where you have set your push notification settings.</td>
+</tr>
+<tr>
+<td>pushSettings</td>
+<td>pushSettings</td>
+<td>Whether specific push notifications are enabled for your account (e.g. receiving taps, sounds, vibrations).</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_8">Legacy Android Subscriptions (Stripe)</h2>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>The email address associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>currency</td>
+<td>The currency associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>address_line1</td>
+<td>The address associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>address_zip</td>
+<td>The zip code associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>country</td>
+<td>The country associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>brand</td>
+<td>The brand of the credit card associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>exp_month</td>
+<td>The expiration month of the credit card associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>exp_year</td>
+<td>The expiration year of the credit card associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>last4</td>
+<td>The last four digits of the credit card associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>funding</td>
+<td>The funding used (e.g. credit) associated with your legacy subscription.</td>
+</tr>
+<tr>
+<td>subscriptions</td>
+<td>current<em>period</em>end</td>
+<td>The end date of your current legacy subscription.</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>amount</td>
+<td>The amount of the legacy subscription that you paid for your current plan period (can be either monthly or yearly).</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>currency</td>
+<td>The currency associated with your legacy subscription plan.</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>interval</td>
+<td>The interval period in which your legacy subscription is active (e.g. year).</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>interval_count</td>
+<td>The number of intervals in which your legacy subscription has been active.</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>name</td>
+<td>The product name of your legacy subscription.</td>
+</tr>
+<tr>
+<td>subscriptions</td>
+<td>status</td>
+<td>The status of your legacy subscription.</td>
+</tr>
+<tr>
+<td>subscriptions</td>
+<td>start_date</td>
+<td>The start date of your current legacy subscription.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_9">HTTP Activity</h2>
+
+<p>(Note: these data elements pertain to your IP address and the metadata associated with it)</p>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ipAddresses</td>
+<td>ipAddresses</td>
+<td>IP address(es) associated with your account.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>country</td>
+<td>Country/countries associated with your account.</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>locale</td>
+<td>Locale(s) associated with your account.</td>
+</tr>
+<tr>
+<td>timestampUTC</td>
+<td>timestampUTC</td>
+<td>The date and time associated with your account per IP address.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_10">Consent Events</h2>
+
+<p>(Note: these data elements pertain to your consent preferences and the metadata associated with them as stored in our third party consent management platform)</p>
+
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Data Element</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>consentCreationDate</td>
+<td>consentCreationDate</td>
+<td>The date and time you first provided your consent. Consent is when a user gives permission to Grindr for their personal data to be processed in a particular way (e.g. .</td>
+</tr>
+<tr>
+<td>collectionPointType</td>
+<td>collectionPointType</td>
+<td>The collection point where consent is collected (note: due to the limitations of our third party consent management platform, consent collected through an SDK from your mobile device will be displayed as &quot;COOKIES&quot;).</td>
+</tr>
+<tr>
+<td>purposes</td>
+<td>name</td>
+<td>The category name that consent was given for (e.g. Functional Cookies, Social Media Cookies).</td>
+</tr>
+<tr>
+<td>purposes</td>
+<td>status</td>
+<td>The status of the consent you provided to Grindr (e.g. Active).</td>
+</tr>
+<tr>
+<td>purposes</td>
+<td>purposeType</td>
+<td>The type of purpose that consent was given for (note: due to the limitations of the third party consent management platform, consent collected through an SDK from your mobile device in order to process your data will be displayed as &quot;COOKIES&quot;).</td>
+</tr>
+<tr>
+<td>purposes</td>
+<td>transactionType</td>
+<td>The type of transaction collected by a collection point (e.g. the values that you supplied in a cookie banner). The possible values consist of the following: CONFIRMED, PENDING, OPT<em>OUT, WITHDRAWN, EXTEND, NOTGIVEN, NO</em>CHOICE.</td>
+</tr>
+<tr>
+<td>purposes</td>
+<td>consentLifespanSeconds</td>
+<td>The number of seconds for the lifespan of the consent collected.</td>
+</tr>
+<tr>
+<td>clientApp</td>
+<td>clientApp</td>
+<td>The name of the client application (e.g. GRINDR - ANDROID).</td>
+</tr>
+<tr>
+<td>interactionDate</td>
+<td>interactionDate</td>
+<td>The date and time you interacted with a collection point (e.g. you interacted with a cookie banner at a specific date/time).</td>
+</tr>
+<tr>
+<td>language</td>
+<td>language</td>
+<td>Your preferred language (e.g. en-us).</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>origin</td>
+<td>The origin of the consent preferences (e.g. SDK, aka a software development kit).</td>
+</tr>
+<tr>
+<td>isAnonymous</td>
+<td>isAnonymous</td>
+<td>Whether the user&#39;s consent preferences are associated with a Grindr user&#39;s internal identifier (if not, then &quot;isAnonymous&quot; = &quot;true&quot;).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</body>
+
+</html>
+
