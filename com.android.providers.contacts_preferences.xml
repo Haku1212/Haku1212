@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="sync_contacts_info"></string>
+    <string name="sync_contacts_state">SYNC_CONTACTS_STATE_END</string>
+    <string name="locale">[es_ES]</string>
+    <boolean name="KEY_DISPLAY_SIM_ONCE" value="true" />
+</map>
